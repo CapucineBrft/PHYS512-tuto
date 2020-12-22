@@ -22,4 +22,4 @@ The gif of the density evolution is shown in "nbody_periodic". The evolution of 
 ### Part 4:
 The script for this part is "cosmology.py". The gif is "cosmo" and the plot of the energy is "energy_cosmo". I also included a plot of the intial density grid computed using the scale-invariant power spectrum, named "density_cosmo" (it is a collapsed 3D plot). 
 
-The simulation does not behave the way I expected it to, as it doesn't form "filaments" in density. I couldn't find the reason why it behaves that way, but I suspect there is something wrong in my leapfrog method.  
+The simulation does not behave the way I expected it to, as it doesn't form "filaments" in density. I couldn't find the reason why it behaves that way, but I suspect there is something wrong in my periodic boundary conditions, as I have the same sort of problem in Part 3.  
