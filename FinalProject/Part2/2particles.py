@@ -35,83 +35,18 @@ if __name__=='__main__':
     aa = []
     p.plot3d_rho('2ptcl_3dplots/0.png')
     
-    # x,y,z=[],[],[]
-    # x.append(p.x)
-    # y.append(p.y)
-    # z.append(p.z)
-    
-    # vx,vy,vz = [],[],[]
-    # vx.append(p.vx)
-    # vy.append(p.vy)
-    # vz.append(p.vz)
-    
-    # ax,ay,az = [],[],[]
-    # ax.append(p.fx)
-    # ay.append(p.fy)
-    # az.append(p.fz)
-    
     Etot = []
     for i in range(1,it):
         
         p.evolve()
-        
-        
-        
-    #     #update the position and velocity
-    #     #p.forces()
-    #     p.advance_timeStep()
-    #     #get the energy at iteration i:
-    #     p.total_E()
-    #     Etot.append(p.tot)
-        
-        
-        # plt.figure()
-        # plt.imshow(p.pot.sum(axis=2))
-        # plt.savefig(f'test/density{i}.png')
-        # plt.close()
-        
-
-    #     # fig,axx = plt.subplots(figsize=(10,10), dpi=100)
-    #     # axx.imshow(
-    #     #     p.ax.sum(axis=2),
-    #     #     origin="lower",
-    #     #     aspect="auto"
-    #     #     )
-    #     # axx.set_xlabel("y")
-    #     # axx.set_ylabel("x")
-    #     # axx.grid(which='both', alpha=0.75, color='w')
-    #     # plt.show()
-        
         p.plot3d_rho(f'2ptcl_3dplots/{i}.png')
         
-    #     #record new x, y and z
+        #record new x, y and z
         pp.append(p.pos)
         vv.append(p.v)
         aa.append(p.acc[p.coords[2], p.coords[1], p.coords[0]])
+    
         
-        # x.append(p.x)
-        # y.append(p.y)
-        # z.append(p.z)
-        
-        # vx.append(p.vx)
-        # vy.append(p.vy)
-        # vz.append(p.vz)
-        
-        # ax.append(p.fx)
-        # ay.append(p.fy)
-        # az.append(p.fz)
-        
-
-    #plot the time evolution of the coordinates
-    # fig = plt.figure()
-    # plt.plot(range(it), x, label='x')
-    # plt.plot(range(it), y, label='y')
-    # plt.plot(range(it), z, label = 'z')
-    # plt.title('Evoltuion of x,y,z coordinates with time')
-    # plt.xlabel('Iteration (time)')
-    # plt.ylabel('Coordinate')
-    # plt.legend()
-    #plt.savefig('1ptcl_position.png', dpi=150)
         
     #plt.plot(range(1,it), Etot)
     plt.figure(figsize=(8,8))
